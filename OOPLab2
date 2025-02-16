@@ -1,0 +1,44 @@
+class Book {
+    private String title;
+    private String author;
+    private String isbn;
+
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    public String getDetails() {
+        return "Title: " + title + "\nAuthor: " + author + "\nISBN: " + isbn;
+    }
+}
+
+class BorrowedBook extends Book {
+    private String borrowerName;
+    private String dueDate;
+
+    public BorrowedBook(String title, String author, String isbn, String borrowerName, String dueDate) {
+        super(title, author, isbn);
+        this.borrowerName = borrowerName;
+        this.dueDate = dueDate;
+    }
+
+    public String getBorrowDetails() {
+        return getDetails() + "\nBorrower: " + borrowerName + "\nDue Date: " + dueDate;
+    }
+}
+
+public class LibrarySystem {
+    public static void main(String[] args) {
+        BorrowedBook borrowedBook = new BorrowedBook(
+            "To Kill a Mockingbird",
+            "Harper Lee",
+            "978-0-06-112008-4",
+            "John Doe",
+            "2025-03-01"
+        );
+
+        System.out.println(borrowedBook.getBorrowDetails());
+    }
+}
