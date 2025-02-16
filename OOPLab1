@@ -1,0 +1,23 @@
+class Result{
+  private float a;
+  private float b;
+  private float total;
+  private float getdata(float val1,float val2)
+  {
+    a=val1;
+    b=val2;
+    total=a+b;
+    return total;
+  }
+  public void displaydata(){
+    float val3=getdata(82,83);
+    System.out.println("Sum: " +val3);
+  }
+ }
+class Main{
+  public static void main(String[]args){
+    Result S = new Result() ;
+    S.displaydata();
+ }
+} 
+ 
