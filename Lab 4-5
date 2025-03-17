@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class PassCheck {
+    int num1,num2,num3;
+
+    // Constructor
+    public PassCheck(int x, int y, int z) {
+        num1 = x;
+        num2 = y;
+        num3 = z;
+    }
+
+    // Method to check pass or fail
+    public String checkPass() {
+        return (num1 + num2 + num3) > 80 ? "Pass" : "Fail";
+    }
+
+    // Main method to take input and test the class
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int x = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int y = scanner.nextInt();
+        System.out.print("Enter third number: ");
+        int z = scanner.nextInt();
+
+        PassCheck pc = new PassCheck(x, y, z);
+        System.out.println("Result: " + pc.checkPass());
+
+        scanner.close();
+    }
+}
