@@ -1,0 +1,49 @@
+class Rectangle {
+    // Attributes
+    double length;
+    double width;
+
+    // Constructor
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Methods
+    double calculateArea() {
+        return length * width;
+    }
+
+    double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+
+    // Main method inside Rectangle class
+    public static void main(String[] args) {
+        Rectangle rect = new Rectangle(5.0, 3.0);
+        Circle circ = new Circle(4.0);
+
+        System.out.println("Rectangle Area: " + rect.calculateArea());
+        System.out.println("Rectangle Perimeter: " + rect.calculatePerimeter());
+
+        System.out.println("Circle Area: " + circ.calculateArea());
+        System.out.println("Circle Perimeter: " + circ.calculatePerimeter());
+    }
+}
+
+// Circle class outside Rectangle
+class Circle {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
