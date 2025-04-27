@@ -1,0 +1,80 @@
+// Person class
+class Person {
+    void greet() {
+        System.out.println("Hello, I am a person.");
+    }
+}
+
+// Student class extending Person
+class Student extends Person {
+    void study() {
+        System.out.println("I am studying.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        
+        // Upcasting Student to Person
+        Person p = new Student();
+        p.greet();
+        
+        // Downcasting Person back to Student
+        Student s = (Student) p;
+        s.study();
+    }
+}
+
+
+// Flyable interface
+interface Flyable {
+    void fly();
+}
+
+// Bird class implementing Flyable
+class Bird implements Flyable {
+    public void fly() {
+        System.out.println("Bird is flying.");
+    }
+    
+    void layEggs() {
+        System.out.println("Bird is laying eggs.");
+    }
+}
+
+// Airplane class implementing Flyable
+class Airplane implements Flyable {
+    public void fly() {
+        System.out.println("Airplane is flying.");
+    }
+    
+    void startEngine() {
+        System.out.println("Airplane engine started.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        
+        // Creating Bird and Airplane objects
+        Flyable[] flyingObjects = new Flyable[2];
+        flyingObjects[0] = new Bird();      // Upcasting Bird to Flyable
+        flyingObjects[1] = new Airplane();  // Upcasting Airplane to Flyable
+        
+        // Iterating and calling fly()
+        for (Flyable obj : flyingObjects) {
+            obj.fly();
+            
+            // Downcasting to access specific methods
+            if (obj instanceof Bird) {
+                Bird b = (Bird) obj;
+                b.layEggs();
+            } else if (obj instanceof Airplane) {
+                Airplane a = (Airplane) obj;
+                a.startEngine();
+            }
+        }
+    }
+}
