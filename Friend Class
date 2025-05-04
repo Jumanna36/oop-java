@@ -1,0 +1,33 @@
+// File: Main.java
+class GFG {
+    private int private_variable;
+    protected int protected_variable;
+
+    public GFG() {
+        private_variable = 10;
+        protected_variable = 99;
+    }
+
+    // Getter method to allow friend-like access (optional)
+    int getPrivateVariable() {
+        return private_variable;
+    }
+}
+
+class F {
+    public void display(GFG obj) {
+        // Accessing private_variable via getter
+        System.out.println("The value of Private Variable = " + obj.getPrivateVariable());
+        
+        // Accessing protected_variable directly
+        System.out.println("The value of Protected Variable = " + obj.protected_variable);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        GFG g = new GFG();
+        F f = new F();
+        f.display(g);
+    }
+}
